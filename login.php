@@ -10,7 +10,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/loginEdit.css">
 
-    <style>
+    <!-- <style>
          * {
      padding: 0;
      margin: 0;
@@ -120,7 +120,7 @@
     
     
 }
-    </style>
+    </style> -->
         
 </head>
 <body>
@@ -129,10 +129,10 @@
             <div id="login-content">
                 <form action="adminIn.php" method="POST" class="sign-in-form">
                     <h2 class="log"> Sign in</h2>
-                    <div class="s1"><label class="form-label s1" for="adminAcc">Username:</label><br></div>
-                    <input class="acc-form" type="text" id="adminAcc" name="adminAcc" value="" placeholder="Please enter your username" required><br>
-                    <div class="s2"><label class="form-label" for="adminPass">Password:</label><br></div>
-                    <input class="pass-form" type="text" id="adminPass" name="adminPass" value="" placeholder="Please enter your password" required><br><br>
+                    <div class="s1"><label class="form-label s1" for="username">Username:</label><br></div>
+                    <input class="acc-form" type="text" id="username" name="username" value="" placeholder="Please enter your username" required><br>
+                    <div class="s2"><label class="form-label" for="password">Password:</label><br></div>
+                    <input class="pass-form" type="text" id="password" name="password" value="" placeholder="Please enter your password" required><br><br>
                     <?php if (isset($_GET['error'])) { ?>
 
                         <p class="error"><?php echo $_GET['error']; ?></p>

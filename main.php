@@ -60,7 +60,7 @@
                         </li>
 
                         <li class="nav-item menu-item">
-                            <a href="index.php" class="nav-link align-middle px-0" id="signout-btn">
+                            <a href="login.php" class="nav-link align-middle px-0" id="signout-btn">
                                 <i class="bi bi-box-arrow-left"></i> <span class="ms-1 d-none d-sm-inline">Sign out</span>
                             </a>
                         </li>
@@ -71,7 +71,7 @@
                         <a href="#" class="d-flex align-items-center text-decoration-none">
                             <img src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-vector-id1209654046?k=20&m=1209654046&s=612x612&w=0&h=Atw7VdjWG8KgyST8AXXJdmBkzn0lvgqyWod9vTb2XoE="
                                 alt="HumanImage" width="50" height="50" class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1 administrator">ADMIN</span>
+                            <span class="d-none d-sm-inline mx-1 administrator"><?php echo  ?></span>
                         </a>
                     </div>
                 </div>
@@ -98,6 +98,6 @@
         
     </div>
 </body>
-<script src="./assets/js/adminUI.js"></script>
+<script src="./assets/js/mainUI.js"></script>
 
 </html>
