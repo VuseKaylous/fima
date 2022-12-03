@@ -27,17 +27,17 @@
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 nav-column">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
-                    <a href="https://rabiloo.com/vi"
+                    <!-- <a href="https://rabiloo.com/vi"
                         class="d-flex align-items-center pb-3 mb-md-0 me-md-auto navbar-brand">
                         <span class="fs-5 d-none d-sm-inline">
                             <img src="https://rabiloo.com/images/logo-menu-blue.svg" alt="" class="block lg:hidden ml-3">
                         </span>
-                    </a>
+                    </a> -->
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
                         <li class="nav-item menu-item">
-                            <a href="#" class="nav-link align-middle px-0" id="allexam-btn">
-                                <i class="bi bi-card-text"></i><span class="ms-1 d-none d-sm-inline">All exams</span>
+                            <a href="#" class="nav-link align-middle px-0" id="home-btn">
+                                <i class="bi bi-card-text"></i><span class="ms-1 d-none d-sm-inline">Home</span>
                             </a>
                         </li>
 
@@ -71,7 +71,7 @@
                         <a href="#" class="d-flex align-items-center text-decoration-none">
                             <img src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-vector-id1209654046?k=20&m=1209654046&s=612x612&w=0&h=Atw7VdjWG8KgyST8AXXJdmBkzn0lvgqyWod9vTb2XoE="
                                 alt="HumanImage" width="50" height="50" class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1 administrator"><?php echo  ?></span>
+                            <span class="d-none d-sm-inline mx-1 administrator"><?php echo $_GET['user'] ?></span>
                         </a>
                     </div>
                 </div>
@@ -84,12 +84,10 @@
                         <span class="ms-1"><a href="#" class="add-exam">ADD EXAM</a></span>
                     </button>
                 </div>
-                <div id="workplace">
-                    
+                <div id="workplace" onload="onLoad()">
+                    <!-- <canvas id = "canvas-workspace"> </canvas> -->
                 </div>
-                <div id = "item-workspace">
-                    
-                </div>
+                
             </div>
         </div>
 
@@ -99,5 +97,6 @@
     </div>
 </body>
 <script src="./assets/js/mainUI.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </html>

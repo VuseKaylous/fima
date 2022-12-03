@@ -1,112 +1,31 @@
 const workplace = document.querySelector('#workplace');
-const ALLEXAM = () => {
-    const table = document.createElement('table');
-    table.setAttribute('class', 'table');
-    const thead = document.createElement('thead');
-    const titlerow = document.createElement('tr');
-    titlerow.innerHTML = '<th scope="col">Exam ID</th>'
-                       + '<th scope="col">Exam name</th>'
-                       + '<th scope="col">Due date</th>'
-                       + '<th scope="col">Status</th>'
-                       + '<th scope="col">Average test time</th>';
-    thead.appendChild(titlerow);
-    // table.appendChild(thead);
-    // var x = document.getElementById("item-workspace");
-    // titlerow.innerHTML = "<?php"
-    // + "$result = $conn->query($sql);"
-    // + "if ($result->num_rows > 0) {"
-    //     + "$dem = 0;"
-    //     + "while ($row = $result->fetch_assoc()) {"
-    // + "?>"
-    //     + "<tr>"
-    //         + "<th scope = \"col\" > <?php echo $row['examid'] ?> </th>"
-    //         + "<th scope = \"col\" > <?php echo $row['examname'] ?> </th>"
-    //         + "<th scope = \"col\" > <?php echo $row['examdate'] ?> </th>"
-    //         + "<th scope = \"col\" > <?php echo $row['examstatus'] ?> </th>"
-    //         + "<th scope = \"col\" > <?php echo $row['examaveragetime'] ?> </th>"
-    //     + "</tr>"
-    // + "<?php"
-    //     + "$dem = 0; }} ?>";
-    thead.appendChild(titlerow);
-    table.appendChild(thead);
-                            
-    const tbody = document.createElement('tbody');
 
-    // getData into an object array rows.
-/*
-    let rows = [];
-    for (let i = 0; i < rows.length; i++) {
-        const row = document.createElement('tr');
-        Object.keys(rows[i]).forEach(function (key) {
-            const col = document.createElement('td');
-            if (key == 'exam') {
-                col.setAttribute('scop', 'row');
-                col.innerText = rows[i][key];
-            } else {
-                col.innerText = rows[i][key];
+const MAIN = () => {
+    while (workplace.hasChildNodes()) {
+        workplace.removeChild(workplace.firstChild);
+    }
+    let canvas = document.createElement('canvas');
+    new Chart(canvas, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
             }
-            row.appendChild(col);
-        });
-        tbody.appendChild(row);
-    }
-*/
-    table.appendChild(tbody);
-    while (workplace.lastElementChild) {
-        workplace.removeChild(workplace.lastElementChild);
-    }
-    workplace.appendChild(table);
-}
-
-
-function updateAllExam() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("item-workspace").innerHTML = this.responseText;
         }
-    };        
-    xhttp.open("GET", "allExams.php", true);
-    xhttp.send();
+    });
+    workplace.appendChild(canvas);
 }
 
-
-const RESULT = () => {
-    const table = document.createElement('table');
-    table.setAttribute('class', 'table');
-    const thead = document.createElement('thead');
-    const titlerow = document.createElement('tr');
-    titlerow.innerHTML = '<th scope="col">Exam</th>'
-                       + '<th scope="col">Due date</th>'
-                       + '<th scope="col">Result</th>'
-    thead.appendChild(titlerow);
-    table.appendChild(thead);               
-                            
-    const tbody = document.createElement('tbody');
-
-    // getData into an object array rows.
-/*
-    let rows = [];
-    for (let i = 0; i < rows.length; i++) {
-        const row = document.createElement('tr');
-        Object.keys(rows[i]).forEach(function (key) {
-            const col = document.createElement('td');
-            if (key == 'exam') {
-                col.setAttribute('scop', 'row');
-                col.innerText = rows[i][key];
-            } else {
-                col.innerText = rows[i][key];
-            }
-            row.appendChild(col);
-        });
-        tbody.appendChild(row);
-    }
-*/
-    table.appendChild(tbody);
-    while (workplace.lastElementChild) {
-        workplace.removeChild(workplace.lastElementChild);
-    }
-    workplace.appendChild(table);
-}
 
 const REPORT = () => {
 
@@ -120,14 +39,15 @@ const SIGNOUT = () => {
 
 }
 
+workplace.onload = function() {
+    currentState = 'Home'
+    console.log("fuck");
+    MAIN();
+}
 
-// ALLEXAM();
-// updateAllExam();
-document.querySelector('#allexam-btn').onclick = function() {
-    currentState = 'All exam';
-    // ALLEXAM();
-    updateAllExam();
-    // $("div").load('allExams.php');
+document.querySelector('#home-btn').onclick = function() {
+    currentState = 'Home';
+    MAIN();
 }
 document.querySelector('#result-btn').onclick = function() {
     currentState = 'Results';

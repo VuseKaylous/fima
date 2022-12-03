@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) === 1) {
         echo "Logged in";
         $_SESSION[$username] = $row[$username];
         $_SESSION['AccID'] = $row['AccID'];
-        header('Location: main.php');
+        header('Location: main.php?user=' . $username);
         exit();
     } 
     else {
